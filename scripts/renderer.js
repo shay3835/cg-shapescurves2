@@ -499,6 +499,11 @@ class Renderer {
     }
     
     drawTriangle(p0, p1, p2, color, framebuffer) {
+        // Deep copy input points
+        p0 = {x: p0.x, y: p0.y};
+        p1 = {x: p1.x, y: p1.y};
+        p2 = {x: p2.x, y: p2.y};
+        
         // Sort points in ascending y order
         if (p1.y < p0.y) this.swapPoints(p0, p1);
         if (p2.y < p0.y) this.swapPoints(p0, p2);
